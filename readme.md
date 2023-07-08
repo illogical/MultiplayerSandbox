@@ -13,6 +13,6 @@ Used for testing basic multiplayer scenarios.
     * https://www.stompyrobot.uk/tools/srdebugger/documentation/#introduction
     * https://assetstore.unity.com/packages/tools/gui/srdebugger-console-tools-on-device-27688
 * Code Monkey's Unity Multiplayer tutorial
-    * https://youtu.be/3yuBOB3VrCk?t=1357 
+    * https://youtu.be/3yuBOB3VrCk?t=2599 
 
 
