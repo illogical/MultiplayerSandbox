@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &36133705 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2871159339947463745, guid: 403404fa981031e42ae0a54aeb33c6ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 4788473948064477075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &45841523
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redBox: {fileID: 1792952576}
   blueBox: {fileID: 1148987123}
-  sharedObjectPrefab: {fileID: 3450355661271876504, guid: 403404fa981031e42ae0a54aeb33c6ee,
+  sharedObjectPrefab: {fileID: 7095820227828028183, guid: 403404fa981031e42ae0a54aeb33c6ee,
     type: 3}
 --- !u!114 &45841526
 MonoBehaviour:
@@ -192,12 +198,6 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!4 &91692454 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6886690677424208903, guid: 403404fa981031e42ae0a54aeb33c6ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 4788473948064477075}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &195531414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2616,7 +2616,7 @@ Transform:
   m_Children:
   - {fileID: 1148987124}
   - {fileID: 1792952580}
-  - {fileID: 91692454}
+  - {fileID: 36133705}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

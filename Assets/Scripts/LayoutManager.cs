@@ -18,6 +18,16 @@ namespace Assets.Scripts
             return new Vector3(leftMiddleWithDepth.x + objectSize.x / 2, leftMiddleWithDepth.y, destinationZ);
         }
 
+        public static Vector3 GetScreenLeftCenterNextPositionForObject(GameObject gameObject, Camera camera, int index, float destinationZ)
+        {
+            var objectSize = GetObjectDimensions(gameObject);
+            var margin = objectSize.x / 2;
+
+            // keep in mind that the face closest to the camera is half the depth closer than the center of the object)
+            var leftMiddleWithDepth = camera.ViewportToWorldPoint(new Vector3(0, 0.5f, Mathf.Abs(camera.transform.position.z) + destinationZ - (objectSize.z / 2)));
+            return new Vector3(leftMiddleWithDepth.x + ((index - 1) * margin) + ((index - 1) * objectSize.x) + (objectSize.x / 2), leftMiddleWithDepth.y, destinationZ);
+        }
+
         public static Vector3 GetScreenBottomCenterPositionForObject(GameObject gameObject, Camera camera, float destinationZ)
         {
             var objectSize = GetObjectDimensions(gameObject);

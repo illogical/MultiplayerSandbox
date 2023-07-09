@@ -12,15 +12,18 @@ public class SpawnTest : TestButtonNetworkBehavior
     [SerializeField] private GameObject blueBox;
     [SerializeField] private GameObject sharedObjectPrefab;
 
-    private GameObject sharedObject;
+    private List<GameObject> sharedObjects;
 
     private const int Z_POSITION = 25;
+
+    private void Awake()
+    {
+        sharedObjects = new List<GameObject>();
+    }
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-
-        //CreateSharedGreenBoxClientRpc(); // this doesn't work on the non-host
 
         Debug.Log("OnNetworkSpawn executed");
     }
@@ -85,12 +88,13 @@ public class SpawnTest : TestButtonNetworkBehavior
     [ClientRpc]
     private void CreateSharedGreenBoxClientRpc(ulong clientId)
     {
-        sharedObject = Instantiate(sharedObjectPrefab, Vector3.zero, Quaternion.identity);
+        var newSharedObject = Instantiate(sharedObjectPrefab, Vector3.zero, Quaternion.identity);
+        sharedObjects.Add(newSharedObject);
 
         // TODO: can each client move this object?
-        var greenBoxPosition = LayoutManager.GetScreenLeftCenterPositionForObject(sharedObject, Camera.main, Z_POSITION);
-        sharedObject.transform.position = greenBoxPosition;
-        var boxUI = sharedObject.GetComponent<BoxUI>(); 
+        var greenBoxPosition = LayoutManager.GetScreenLeftCenterNextPositionForObject(newSharedObject, Camera.main, sharedObjects.Count, Z_POSITION);
+        newSharedObject.transform.position = greenBoxPosition;
+        var boxUI = newSharedObject.GetComponent<BoxUI>(); 
         boxUI.SetText("ClientId=" + clientId.ToString());
     }
 }
