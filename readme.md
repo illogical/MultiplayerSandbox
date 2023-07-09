@@ -16,3 +16,7 @@ Used for testing basic multiplayer scenarios.
     * https://youtu.be/3yuBOB3VrCk?t=2599 
 
 
+### Current Goals
+* Display a different object to each player 
+  * at the bottom center of the screen
+* Measure each client's screen and place object at the left center
